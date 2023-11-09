@@ -8,7 +8,7 @@ def generate_first_report(extract):
     pivot_table = data_frame.pivot_table(values='Index', index=['Name', 'Purchase'], columns=['Year'], aggfunc="size", fill_value=0)
     date = (datetime.today()).strftime('%d%m%Y')
 
-    with pd.ExcelWriter(date + '_First_Report') as writer:
+    with pd.ExcelWriter(date + '_First_Report.xlsx') as writer:
         pivot_table.to_excel(writer, sheet_name='Pivot')
         data_frame.to_excel(writer, sheet_name="Data", index=False)
         worksheet1 = writer.sheets['Pivot']
