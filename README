@@ -1,0 +1,16 @@
+Python Report Automation
+
+This project will accept a file via the Jenkins UI build parameters
+and then generate a report based on the users report selection. The report
+is placed into a zip file, and then saved as an artifact within the Jenkins
+job and can be downloaded by the user directly from the UI.
+
+Jenkins Reqs:
+- File Parameter plugin (https://plugins.jenkins.io/file-parameters/)
+- Workspace Cleanup plugin (https://plugins.jenkins.io/ws-cleanup/)
+
+Agent Reqs:
+- Python3
+- pandas package
+- xlrd package
+- openpyxl package
